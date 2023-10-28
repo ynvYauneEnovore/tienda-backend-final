@@ -5,6 +5,7 @@ import { UpdateProductoDto } from './dto/update-producto.dto';
 import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
+import { Public } from './decorators/auth-public.decorator';
 
 
 @ApiTags('CATEGORÍA PRODUCTO  ')
@@ -19,6 +20,7 @@ export class ProductosController {
     return this.productosService.create(createProductoDto);
   }
 
+  @Public()
   @Get()
   findAll() {
     return this.productosService.findAll();
