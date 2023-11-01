@@ -8,8 +8,7 @@ import { UseGuards } from '@nestjs/common';
 
 
 @ApiTags('CATEGORÍA PRODUCTO  ')
-@ApiBearerAuth()
-@UseGuards(JwtAuthGuard)
+
 @Controller('CatProducto')
 export class CategoriaProductosController {
   constructor(private readonly categoriaProductosService: CategoriaProductosService) {}
